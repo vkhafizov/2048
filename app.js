@@ -1,6 +1,8 @@
 const grid = document.querySelector('.grid');
 const scoreElement = document.getElementById('score');
+const highScoreElement = document.getElementById('high-score');
 let score = 0;
+let highScore = localStorage.getItem('2048-high-score') || 0;
 let board = [
     [0, 0, 0, 0],
     [0, 0, 0, 0],
@@ -10,6 +12,7 @@ let board = [
 
 // Инициализация игры
 function init() {
+    highScoreElement.textContent = highScore;
     addTile();
     addTile();
     updateGrid();
@@ -45,6 +48,13 @@ function updateGrid() {
         }
     }
     scoreElement.textContent = score;
+
+    // Обновляем рекорд
+    if (score > highScore) {
+        highScore = score;
+        highScoreElement.textContent = highScore;
+        localStorage.setItem('2048-high-score', highScore);
+    }
 }
 
 // Получение цвета плитки
