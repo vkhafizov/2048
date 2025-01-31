@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>2048 Game</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
@@ -21,6 +23,13 @@
                 .then(() => console.log('Service Worker Registered'))
                 .catch(err => console.log('Service Worker Registration Failed: ', err));
         }
+
+        // Убираем адресную строку на мобильных устройствах
+        window.addEventListener('load', () => {
+            if (window.navigator.standalone) {
+                document.body.style.height = '100vh';
+            }
+        });
     </script>
 </body>
 </html>
