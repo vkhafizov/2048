@@ -28,13 +28,14 @@ h1 {
     margin: 0;
 }
 
-/* Счет и рекорд */
+/* Контейнер для счёта и рекорда */
 .score-container {
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
 }
 
+/* Стили для счёта и рекорда */
 .score, .high-score {
     font-size: 24px;
     color: #776e65;
@@ -42,6 +43,7 @@ h1 {
     padding: 10px;
     border-radius: 5px;
     min-width: 100px;
+    text-align: center;
 }
 
 /* Игровое поле */
