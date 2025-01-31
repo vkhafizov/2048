@@ -49,7 +49,7 @@ function updateGrid() {
     }
     scoreElement.textContent = score;
 
-    // Обновляем рекорд
+    // Обновляем рекорд сразу, как только достигается новый максимум
     if (score > highScore) {
         highScore = score;
         highScoreElement.textContent = highScore;
@@ -194,7 +194,7 @@ document.addEventListener('keydown', (event) => {
         addTile();
         updateGrid();
         if (isGameOver()) {
-            alert('Game Over! Your score: ' + score);
+            alert('Игра окончена! Ваш счёт: ' + score);
         }
     }
 });
@@ -246,7 +246,7 @@ function setupTouchControls() {
         addTile();
         updateGrid();
         if (isGameOver()) {
-            alert('Game Over! Your score: ' + score);
+            alert('Игра окончена! Ваш счёт: ' + score);
         }
     });
 }
