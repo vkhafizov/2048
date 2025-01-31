@@ -39,6 +39,7 @@ function updateGrid() {
         for (let j = 0; j < 4; j++) {
             const tile = document.createElement('div');
             tile.textContent = board[i][j] === 0 ? '' : board[i][j];
+            tile.setAttribute('data-value', board[i][j]);
             tile.style.backgroundColor = getTileColor(board[i][j]);
             grid.appendChild(tile);
         }
@@ -65,7 +66,7 @@ function getTileColor(value) {
     return colors[value] || '#cdc1b4';
 }
 
-// Логика движения влево
+// Логика движения
 function moveLeft() {
     let moved = false;
     for (let i = 0; i < 4; i++) {
@@ -90,7 +91,6 @@ function moveLeft() {
     return moved;
 }
 
-// Логика движения вправо
 function moveRight() {
     let moved = false;
     for (let i = 0; i < 4; i++) {
@@ -115,7 +115,6 @@ function moveRight() {
     return moved;
 }
 
-// Логика движения вверх
 function moveUp() {
     let moved = false;
     for (let j = 0; j < 4; j++) {
@@ -140,7 +139,6 @@ function moveUp() {
     return moved;
 }
 
-// Логика движения вниз
 function moveDown() {
     let moved = false;
     for (let j = 0; j < 4; j++) {
