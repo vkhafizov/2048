@@ -16,7 +16,7 @@ html, body {
 .container {
     text-align: center;
     width: 100%;
-    max-width: 400px; /* Ограничиваем ширину для больших экранов */
+    max-width: 360px; /* Ограничиваем ширину для больших экранов */
     padding: 10px;
     box-sizing: border-box;
 }
