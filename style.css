@@ -51,6 +51,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    margin-right: 25px;
     gap: 10px;
     background-color: #bbada0;
     padding: 10px;
